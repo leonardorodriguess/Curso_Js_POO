@@ -22,7 +22,12 @@ export class Conta{
         return this._saldo;
     }
 
-    sacar(valor){
+    sacar(valor, taxa){
+        let taxa = 1;
+        return this._sacar(valor, taxa);
+    }
+
+    _sacar(valor){
         if(this._saldo >= valor){
             this._saldo -= valor;
             return valor;
